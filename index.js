@@ -1,7 +1,8 @@
 'use strict';
 
 // YOU KNOW WHAT TO DO //
-
+//FUNCTION LIBRARY
+//FUNCTION DECLARATIONS ONLY
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
@@ -22,3 +23,13 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
+/**
+ * identity: Function that takes in an input value and returns it unchanged
+ * 
+ * @param {value}: Function takes in any value
+ * @returns {value}: Function returns input value unchanged
+ */
+function identity (value) {
+    //return parameter value unchanged 
+    return value;
+};
