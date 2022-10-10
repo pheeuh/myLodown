@@ -28,8 +28,25 @@ module.exports.each = each;
  * 
  * @param {value}: Function takes in any value
  * @returns {value}: Function returns input value unchanged
+ * 
  */
 function identity (value) {
-    //return parameter value unchanged 
     return value;
 };
+
+
+/**
+ * typeOf: Function that takes in an input value and returns the typeof value as a string
+ *
+ * @param {value}: Function takes in any value
+ * @param {value}: Function returns the typeof input value as a string 
+ * 
+ */
+ _.typeOf = function (value) {
+    if (Array.isArray(value)) {
+      return "array";
+    } if (typeof value === "object" && !Array.isArray(value) && value === null) {
+      return "null";
+    }
+      return typeof value;
+  }
