@@ -31,7 +31,7 @@ module.exports.each = each;
  * identity: Function that takes in an input value and returns it unchanged
  * 
  * @param {value}: Function takes in any value
- * @returns {value}: Function returns input value unchanged
+ * @returns {String} value: Function returns input value unchanged
  * 
  */
 function identity (value) {
@@ -43,7 +43,7 @@ function identity (value) {
  * typeOf: Function that takes in an input value and returns the typeof value as a string
  *
  * @param {value}: Function takes in any value
- * @param {value}: Function returns the typeof input value as a string 
+ * @returns {value}: Function returns the typeof input value as a string 
  * 
  */
  _.typeOf = function (value) {
@@ -56,10 +56,13 @@ function identity (value) {
   }
 
   /**
+   * indexOf: Function that takes in an input array and input value and returns the index #
+   * of the value, if found in the array 
    * 
-   * 
-   * 
-   * 
+   * @param {Array} array: The array to be iterated over. 
+   * @param {value} value: The value that is being located in the array.
+   * @returns {i or -1}: Function returns the index of the array, if the value is found. If the value 
+   * is not found, the function return -1. 
    * 
    */
    _.indexOf = function (array, value) {
@@ -69,3 +72,10 @@ function identity (value) {
       }
     } return -1;
       }
+      
+/**
+ * 
+ * 
+ * 
+ * 
+ */
