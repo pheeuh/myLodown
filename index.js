@@ -3,6 +3,8 @@
 // YOU KNOW WHAT TO DO //
 //FUNCTION LIBRARY
 //FUNCTION DECLARATIONS ONLY
+
+
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
@@ -23,6 +25,8 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
+
+
 /**
  * identity: Function that takes in an input value and returns it unchanged
  * 
@@ -50,3 +54,18 @@ function identity (value) {
     }
       return typeof value;
   }
+
+  /**
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+   _.indexOf = function (array, value) {
+        for (var i = 0; i < array.length; i++) {
+        if (value === array[i]) {
+        return i;
+      }
+    } return -1;
+      }
