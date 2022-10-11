@@ -31,7 +31,7 @@ module.exports.each = each;
  * identity: Function that takes in an input value and returns it unchanged
  * 
  * @param {value}: Function takes in any value
- * @returns {String} value: Function returns input value unchanged
+ * @returns {value}: Function returns input value unchanged
  * 
  */
 function identity (value) {
@@ -43,10 +43,10 @@ function identity (value) {
  * typeOf: Function that takes in an input value and returns the typeof value as a string
  *
  * @param {value}: Function takes in any value
- * @returns {value}: Function returns the typeof input value as a string 
+ * @returns {String} value: Function returns the typeof input value as a string 
  * 
  */
- _.typeOf = function (value) {
+  function typeOf(value) {
     if (Array.isArray(value)) {
       return "array";
     } if (typeof value === "object" && !Array.isArray(value) && value === null) {
@@ -65,7 +65,7 @@ function identity (value) {
    * is not found, the function return -1. 
    * 
    */
-   _.indexOf = function (array, value) {
+  function indexOf (array, value) {
         for (var i = 0; i < array.length; i++) {
         if (value === array[i]) {
         return i;
@@ -74,8 +74,31 @@ function identity (value) {
       }
       
 /**
+ * first: Function that takes in an input array and an input number, which
+ * returns the first "number" of items in the array.
  * 
+ * @param {Array} array: The array that we return the first number of items from. 
+ * @param {Number} number: The number used to return the first "amount of" items from 
+ * the array.
+ * @returns {[], array[0], ["first number of items"]}: Function returns an empty array, if array
+ * is not an array. Function returns the first index of array, if number is not given or is not a
+ * number. Lastly, if it does not execute the first two if-statements,  function returns the
+ * first number of items as an array. 
  * 
  * 
  * 
  */
+  function first (array, number) {
+    //creating a variable with an empty array to return if it's not an array
+  var emptyArray = [];
+  //returning an empty array, if array is not an array
+  if (!Array.isArray(array)) {
+    return emptyArray;
+  //returning the first element in array, if number is not given or not a number
+  } if (!number) {
+    return array[0];
+    //returning the first "number" items of array 
+  } if (typeof number === "number") {
+    return array.splice(0, number);
+  }
+  }
