@@ -73,20 +73,17 @@ function identity (value) {
     } return -1;
       }
       
+
 /**
  * first: Function that takes in an input array and an input number, which
  * returns the first "number" of items in the array.
  * 
- * @param {Array} array: The array that we return the first number of items from. 
- * @param {Number} number: The number used to return the first "amount of" items from 
- * the array.
- * @returns {[], array[0], ["first number of items"]}: Function returns an empty array, if array
+ * @param {Array} array: The array that we return the first input number of items from. 
+ * @param {Number} number: The number that evaluates the first input number of items from the array.
+ * @returns {[], array[0], ["first input number of items"]}: Function returns an empty array, if array
  * is not an array. Function returns the first index of array, if number is not given or is not a
  * number. Lastly, if it does not execute the first two if-statements,  function returns the
- * first number of items as an array. 
- * 
- * 
- * 
+ * first input number of items as an array. 
  */
   function first (array, number) {
     //creating a variable with an empty array to return if it's not an array
@@ -102,3 +99,16 @@ function identity (value) {
     return array.splice(0, number);
   }
   }
+
+
+/**
+ * last: Function that takes in a input array and a input number, which returns the last input 
+ * number of items in an array.
+ * 
+ * @param {Array} array: The array that we return the last input number of items from. 
+ * @param {Number} number: The number that evaluates the last input number of items from the array.
+ * @returns {[], array[array.length - 1], ["last input number of items"]}: Function returns an empty array
+ * if array is not an array. Function returns the last element of the array, if number is not given or isn't 
+ * a number. Lastly, if the last statements weren't execute, the function will just return the last input
+ * number of items from the array. 
+ */
