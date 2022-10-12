@@ -112,3 +112,31 @@ function identity (value) {
  * a number. Lastly, if the last statements weren't execute, the function will just return the last input
  * number of items from the array. 
  */
+  function last (array, number) {
+  var emptyArray = [];
+  if (!Array.isArray(array)) {
+    return emptyArray;
+  } if (!number) {
+    return array[array.length - 1]; 
+  } if (typeof number === "number" && !(number < 0)) {
+    return array.splice(-number);
+  } if (-number) {
+    return emptyArray;
+  }
+};
+
+/**
+ * unique: Function that takes in an input array and returns a new array with all the duplicates removed.
+ * 
+ * @param {Array} array: The array that we are extracting the duplicates from. 
+ * @returns {Array} nonDuplicates: The new array that replicates array, without the duplicates.
+ */
+function unique (array) {
+  let nonDuplicates = [];
+  for( var i = 0; i < array.length; i++){
+    if(nonDuplicates.indexOf(array[i]) === -1) {
+        nonDuplicates.push(array[i]);
+    }
+}
+return nonDuplicates;
+}
