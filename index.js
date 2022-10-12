@@ -128,8 +128,8 @@ function identity (value) {
 /**
  * unique: Function that takes in an input array and returns a new array with all the duplicates removed.
  * 
- * @param {Array} array: The array that we are extracting the duplicates from. 
- * @returns {Array} nonDuplicates: The new array that replicates array, without the duplicates.
+ * @param {Array} array: The input array that we are extracting duplicates from. 
+ * @returns {Array} nonDuplicates: The new array that replicates the input array, without the duplicates.
  */
 function unique (array) {
   let nonDuplicates = [];
