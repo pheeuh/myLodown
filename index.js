@@ -128,7 +128,7 @@ function identity (value) {
 /**
  * unique: Function that takes in an input array and returns a new array with all the duplicates removed.
  * 
- * @param {Array} array: The input array that we are extracting duplicates from. 
+ * @param {Array} array: The input array that we are extracting duplicates from and iterating over.  
  * @returns {Array} nonDuplicates: The new array that replicates the input array, without the duplicates.
  */
 function unique (array) {
@@ -140,3 +140,26 @@ function unique (array) {
 }
 return nonDuplicates;
 }
+/**
+ * filter: Function that calls each element in the input array, with its arguments being the input array's elements, 
+ * input array's indexes, and input array, itself. Function returns a new array of elements for which function calling
+ * results in true. 
+ * 
+ * @param {Array} array: The input array that we are iterating over. 
+ * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
+ * @returns {Array} trueArray: The new array of elements that resulted in true for the function calling. 
+ * 
+ * 
+ * 
+ */
+ function filter(array, func) {
+  let trueArray = [];
+  for (var i = 0; i < array.length; i++) {
+  if (func(array[i], [i], array) === true && func(array[i], [i], array) !== false ) {
+    trueArray.push(array[i]); 
+  }
+   }
+  return trueArray;
+    }
+
+
