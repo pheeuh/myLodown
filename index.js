@@ -55,7 +55,7 @@ function identity (value) {
       return typeof value;
   }
 
-  
+
   /**
    * indexOf: Function that takes in an input array and input value and returns the index #
    * of the value, if found in the array 
@@ -203,10 +203,35 @@ return falseArray;
       for (var i =  0; i < array.length; i++) {
             if (func(array[i], i, array) === true) {
               subArray.push(array[i]);
-        } if (func(array[i], i, array) === false) {
-          subArrayTwo.push(array[i]);
+        }   if (func(array[i], i, array) === false) {
+            subArrayTwo.push(array[i]);
         }
      }
-             newArray.push(subArray, subArrayTwo);
-                return newArray;
+        newArray.push(subArray, subArrayTwo);
+        return newArray;
     }
+
+
+
+/**
+ * map: Designed to loop over a collection, Array or Object and returns the function call value of either
+ * an array or object. 
+ * 
+ * @param {Array or Object} collection: The array or object that we are iterating over. 
+ * @param {Function} func: The function to be applied to each value in the collection. 
+ * @returns {Array} newArray: The array that contains the returned function call value of either an array or object.
+*/
+  function map (collection, func) {
+      var newArray = []; 
+          if (Array.isArray(collection)) {
+              for (var i = 0; i < collection.length; i++) {
+              newArray.push(func(collection[i], i, collection)); 
+              }
+        } else {
+          for (let key in collection ) { 
+          newArray.push(func(collection[key], key, collection)); 
+          }
+        }
+         return newArray;
+  }
+  
