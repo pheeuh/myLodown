@@ -55,6 +55,7 @@ function identity (value) {
       return typeof value;
   }
 
+  
   /**
    * indexOf: Function that takes in an input array and input value and returns the index #
    * of the value, if found in the array 
@@ -140,10 +141,12 @@ function unique (array) {
 }
 return nonDuplicates;
 }
+
+
 /**
  * filter: Function that loops through input array & calls each element in the input array, with its arguments being the 
  * input array's elements, input array's indexes, and input array, itself. Function returns a new array of elements if
- * their function calling results in true. 
+ * their function calling results is true. 
  * 
  * @param {Array} array: The input array that we are iterating over. 
  * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
@@ -161,9 +164,11 @@ return nonDuplicates;
    }
   return trueArray;
     }
+
+
 /**
  * reject: A function that iterates over the input array and applies the input function to each value in the
- * input array. Function returns a new array of elements if their function calling results in false.
+ * input array. Function returns a new array of elements if their function calling results is false.
  * 
  * @param {Array} array: The input array that we are iterating over. 
  * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
@@ -179,3 +184,29 @@ function reject (array, func) {
 }
 return falseArray;
 }
+
+
+/**
+ * partition: A function that iterates over the input array and calls the input function to each value in the
+ * input array. If input function resolves input array values as true, it will push into first subarray. 
+ * If input function resolves input array values as false, it will push into second subarray. The function, then,
+ * returns one array with both subarrays. 
+ * 
+ * @param {Array} array: The input array that we are iterating over.
+ * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements.
+ * @returns {Array} newArray: The array that contains both subarrays. 
+ */
+ function partition (array, func) {
+  var newArray = [];
+  var subArray = [];
+  var subArrayTwo = [];
+      for (var i =  0; i < array.length; i++) {
+            if (func(array[i], i, array) === true) {
+              subArray.push(array[i]);
+        } if (func(array[i], i, array) === false) {
+          subArrayTwo.push(array[i]);
+        }
+     }
+             newArray.push(subArray, subArrayTwo);
+                return newArray;
+    }
