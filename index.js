@@ -141,9 +141,9 @@ function unique (array) {
 return nonDuplicates;
 }
 /**
- * filter: Function that calls each element in the input array, with its arguments being the input array's elements, 
- * input array's indexes, and input array, itself. Function returns a new array of elements for which function calling
- * results in true. 
+ * filter: Function that loops through input array & calls each element in the input array, with its arguments being the 
+ * input array's elements, input array's indexes, and input array, itself. Function returns a new array of elements if
+ * their function calling results in true. 
  * 
  * @param {Array} array: The input array that we are iterating over. 
  * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
@@ -161,5 +161,21 @@ return nonDuplicates;
    }
   return trueArray;
     }
-
-
+/**
+ * reject: A function that iterates over the input array and applies the input function to each value in the
+ * input array. Function returns a new array of elements if their function calling results in false.
+ * 
+ * @param {Array} array: The input array that we are iterating over. 
+ * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
+ * @returns {Array} trueArray: The new array of elements that resulted in false for the function calling. 
+ * 
+ */
+function reject (array, func) {
+  let falseArray = [];
+  for (var i = 0; i < array.length; i++) {
+  if (func(array[i], [i], array) === false) {
+   falseArray.push(array[i]);
+  }
+}
+return falseArray;
+}
