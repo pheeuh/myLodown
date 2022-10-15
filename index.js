@@ -380,9 +380,19 @@ return falseArray;
     }
 
     /**
-     * extend: 
+     * extend: Function that adds elements of an iterable to the end of the list. 
      * 
+     * @param {Object} object: The intial object that will have properties being added to it. 
+     * @param {Object} object2 (with more objects being added, if needed): The object that will be passing its
+     * properties to the initial object. 
+     * @returns {object} object: Returns an updated object of the initial object. 
      * 
      * 
      * 
      */
+     function extend (object, ...object2) {
+      for (let key in object2) {
+        var finalObj = Object.assign(object, object2[key]); 
+      }
+      return finalObj;
+    }
