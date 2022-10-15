@@ -41,7 +41,7 @@ function identity (value) {
 /**
  * typeOf: Function that takes in an input value and returns the typeof value as a string
  *
- * @param {value}: Function takes in any value
+ * @param {value} value: Function takes in any value
  * @returns {String} value: Function returns the typeof input value as a string 
  * 
  */
