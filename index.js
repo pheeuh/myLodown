@@ -86,15 +86,11 @@ function identity (value) {
  * first input number of items as an array. 
  */
   function first (array, number) {
-    //creating a variable with an empty array to return if it's not an array
   var emptyArray = [];
-  //returning an empty array, if array is not an array
   if (!Array.isArray(array)) {
     return emptyArray;
-  //returning the first element in array, if number is not given or not a number
   } if (!number) {
     return array[0];
-    //returning the first "number" items of array 
   } if (typeof number === "number") {
     return array.splice(0, number);
   }
