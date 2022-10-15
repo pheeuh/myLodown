@@ -30,9 +30,8 @@ module.exports.each = each;
 /**
  * identity: Function that takes in an input value and returns it unchanged
  * 
- * @param {value}: Function takes in any value
- * @returns {value}: Function returns input value unchanged
- * 
+ * @param {value} value : Function takes in any value
+ * @returns {value} value: Function returns input value unchanged
  */
 function identity (value) {
     return value;
