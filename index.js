@@ -152,9 +152,6 @@ return nonDuplicates;
  * @param {Array} array: The input array that we are iterating over. 
  * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
  * @returns {Array} trueArray: The new array of elements that resulted in true for the function calling. 
- * 
- * 
- * 
  */
  function filter(array, func) {
   let trueArray = [];
@@ -267,9 +264,10 @@ return falseArray;
  
 
     /**
-     * every: 
-     * 
-     * @param {Array or Object} collection:
+     * every: Executes a function for every element in the collection (either array or object) and returns
+     * true if every element is true and false if at least one element is false. 
+     *        
+     * @param {Array or Object} collection: The collection is what the function uses to call on and iterates over.
      * @param {Function} func: Function that either calls on every array's value, index, and the array, itself, or
      * calls on every object's current value, key, or the object, itself. 
      * @returns {Boolean} true/false: Returns true if every element is true, else return false. 
@@ -309,21 +307,77 @@ return falseArray;
     }
 
     /**
-     * some: 
+     * some: Executes the callback function once for each element present in the array, until it finds at least
+     * one truthy value. If not, it is false. 
      *
-     * 
-     * 
+     * @param {Array or Object} collection: The collection is what the function uses to call on and iterates over.
+     * @param {Function} func: Function that either calls on every array's value, index, and the array, itself, or
+     * calls on every object's current value, key, or the object, itself. 
+     * @returns {Boolean} true/false: Returns true if at least one element is true, but will return false, if all
+     * elements are false. 
      * 
      */
-
-
+     function some (collection, func) {
+      if (func === undefined) {
+        //determine if an array 
+        if (Array.isArray(collection)) {
+          for (var i = 0; i < collection.length; i++) {
+            if (collection[i]) {
+              return true; 
+            }
+          }
+        } else { 
+          for (var key in collection) {
+            if (collection[key]) {
+              return true; 
+    
+            }
+          }
+        }
+      } else {
+        if (Array.isArray(collection)) {
+          for (var i = 0; i < collection.length; i++) {
+            if (func(collection[i], i, collection) === true) {
+              return true; 
+            }
+          }
+        } else {
+          for (var key in collection) {
+            if (func(collection[key], key, collection) === true) {
+              return true;
+            }
+          }
+        }
+      }
+      return false; 
+    }
+    
 
     /**
-     * reduce: 
+     * reduce: "Reduces" the array to a single value and executes a function for each value of the array and the
+     * return value of the final function call is returned. 
      * 
-     * 
-     * 
+     * @param {Array} array: The array that is to be "reduced" to a single value. 
+     * @param {Function} func: Function that is called for every element in the array.
+     * @param {value} seed: The value to be passed to the function as the intital value. 
+     * @returns {value} result: Returns the return value of the final function call. 
      */
+
+     function reduce (array, func, seed) {
+         let result;
+        if (seed === undefined) {       
+            result = array[0];
+            for (let i = 1; i < array.length; i++) {
+              result = func(result, array[i], i, array);
+            }
+          } else  {
+              result = seed; 
+              for (let i = 0; i < array.length; i++) {
+                result = func(result, array[i], i, array);
+              }
+          }
+          return result;
+    }
 
     /**
      * extend: 
