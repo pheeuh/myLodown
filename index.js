@@ -126,6 +126,7 @@ function identity (value) {
   }
 };
 
+
 /**
  * unique: Function that takes in an input array and returns a new array with all the duplicates removed.
  * 
@@ -235,3 +236,99 @@ return falseArray;
          return newArray;
   }
   
+  /**
+   * contains: Designed to look through an array and see if a specific value is stored inside. This function
+   * returns true if the array contains this specific value and false, if otherwise. 
+   * 
+   * @param {Array} array: The array we are searching through. 
+   * @param {Any data type} value: The value we are looking for in the array. 
+   * @returns {Boolean} true/false: Returns true or false, if value is found or not. 
+   */
+      function contains (array, value) {
+      if (array.includes(value)) {
+        return true;
+      }
+      return false;
+    }
+  
+
+    /**
+     * pluck: Designed to retrieve the key from an object and returns the result to an array. 
+     * 
+     * @param {Array} array: The array that contains objects. 
+     * @param {Object property} prop: The property of each object at each array's index. 
+     * @returns {Array} arrayValue[prop]: Returns an array of each value of the property for each element 
+     * in array.
+     */
+        function pluck (array, prop) {
+         return _.map(array, function(arrayValue) {
+             return arrayValue[prop];
+      }); 
+ 
+
+    /**
+     * every: 
+     * 
+     * @param {Array or Object} collection:
+     * @param {Function} func: Function that either calls on every array's value, index, and the array, itself, or
+     * calls on every object's current value, key, or the object, itself. 
+     * @returns {Boolean} true/false: Returns true if every element is true, else return false. 
+     */
+     function every (collection, func) {
+      if (func === undefined) {
+        if (Array.isArray(collection)) {
+          for (var i = 0; i < collection.length; i++) {
+            if (!collection[i]) {
+              return false; 
+            }
+          }
+        } else { 
+          for (let key in collection) {
+          if (!collection[key]) {
+            return false; 
+          }
+        }
+        }
+      } else { 
+        if (Array.isArray(collection)) {
+          for (var i = 0; i < collection.length; i++) {
+            if (func(collection[i], i, collection) === false) {
+              return false;
+            }
+          }
+        } else { 
+          //
+          for (let key in collection) {
+            if (func(collection[key], key, collection) === false) {
+              return false;
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    /**
+     * some: 
+     *
+     * 
+     * 
+     * 
+     */
+
+
+
+    /**
+     * reduce: 
+     * 
+     * 
+     * 
+     */
+
+    /**
+     * extend: 
+     * 
+     * 
+     * 
+     * 
+     */
