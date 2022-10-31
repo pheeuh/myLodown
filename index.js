@@ -13,6 +13,7 @@
  * @param {Function} action: The Function to be applied to each value in the 
  * collection
  */
+
 function each(collection, action) {
     if(Array.isArray(collection)) {
         for(var i = 0; i < collection.length; i++) {
@@ -140,9 +141,9 @@ return nonDuplicates;
 
 
 /**
- * filter: Function that loops through input array & calls each element in the input array, with its arguments being the 
- * input array's elements, input array's indexes, and input array, itself. Function returns a new array of elements if
- * their function calling results is true. 
+ * filter: Function that loops through input array & passes the current element, current array's index, and the input array, itself
+ * into the callback function. If the result of the current item, being passed into the callback function, is true, then 
+ * it will be pushed into the array that filter returns. 
  * 
  * @param {Array} array: The input array that we are iterating over. 
  * @param {Function} func: The function that takes in arguments of the input array and its indexes & elements. 
@@ -207,8 +208,9 @@ return falseArray;
 
 
 /**
- * map: Designed to loop over a collection, Array or Object and returns the function call value of either
- * an array or object. 
+ * map: Function that loops over a collection and passes the current element of the collection, current collections' 
+ * index or key, and the collection, itself into the callback function. The result of the current item
+ * being passed into the callback function will be pushed into the array that map returns. 
  * 
  * @param {Array or Object} collection: The array or object that we are iterating over. 
  * @param {Function} func: The function to be applied to each value in the collection. 
@@ -245,7 +247,7 @@ return falseArray;
   
 
     /**
-     * pluck: Designed to retrieve the key from an object and returns the result to an array. 
+     * pluck: Designed to retrieve the values from an object's properties and returns an array of each property's value.  
      * 
      * @param {Array} array: The array that contains objects. 
      * @param {Object property} prop: The property of each object at each array's index. 
@@ -349,8 +351,9 @@ return falseArray;
     
 
     /**
-     * reduce: "Reduces" the array to a single value and executes a function for each value of the array and the
-     * return value of the final function call is returned. 
+     * reduce: Function that executes a callback function on each element of the array and collects the
+     *  return value of the callback function stored in an accumulator. Reduce returns a single value, which
+     * is the return value of the FINAL callback function, such as an array, object, or even a number.  
      * 
      * @param {Array} array: The array that is to be "reduced" to a single value. 
      * @param {Function} func: Function that is called for every element in the array.
@@ -390,4 +393,4 @@ return falseArray;
         var finalObj = Object.assign(object, object2[key]); 
       }
       return finalObj;
-    }
+    };
