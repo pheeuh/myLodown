@@ -247,7 +247,8 @@ return falseArray;
   
 
     /**
-     * pluck: Designed to retrieve the values from an object's properties and returns an array of each property's value.  
+     * pluck: Designed to iterate over an array of objects and retrieves the values from each object's property/key
+     * and returns those values into a new array.   
      * 
      * @param {Array} array: The array that contains objects. 
      * @param {Object property} prop: The property of each object at each array's index. 
